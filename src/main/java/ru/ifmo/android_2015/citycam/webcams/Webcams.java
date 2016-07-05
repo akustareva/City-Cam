@@ -5,13 +5,8 @@ import android.net.Uri;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
- * Константы для работы с Webcams API
- */
 public final class Webcams {
 
-    // Зарегистрируйтесь на http://ru.webcams.travel/developers/
-    // и вставьте сюда ваш devid
     private static final String DEV_ID = "77bb1b221306d58e854db724e986e36a";
 
     private static final String BASE_URL = "http://api.webcams.travel/rest";
@@ -26,10 +21,6 @@ public final class Webcams {
 
     private static final String FORMAT_JSON = "json";
 
-    /**
-     * Возвращает URL для выполнения запроса Webcams API для получения
-     * информации о веб-камерах рядом с указанными координатами в формате JSON.
-     */
     public static URL createNearbyUrl(double latitude, double longitude)
             throws MalformedURLException {
         Uri uri = Uri.parse(BASE_URL).buildUpon()
