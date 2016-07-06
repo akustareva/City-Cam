@@ -22,18 +22,21 @@ public class JSONParser {
 
         try {
             reader.beginObject();
+            label:
             while (reader.hasNext()) {
                 if (reader.peek() == JsonToken.BEGIN_OBJECT) {
                     reader.beginObject();
                     continue;
                 }
                 String name = reader.nextName();
-                if (name.equals("webcams")) {
-                    continue;
-                } else if (name.equals("webcam")) {
-                    break;
-                } else {
-                    reader.skipValue();
+                switch (name) {
+                    case "webcams":
+                        continue;
+                    case "webcam":
+                        break label;
+                    default:
+                        reader.skipValue();
+                        break;
                 }
             }
 

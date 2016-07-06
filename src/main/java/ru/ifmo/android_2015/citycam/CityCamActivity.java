@@ -120,7 +120,9 @@ public class CityCamActivity extends AppCompatActivity {
                     Log.e(TAG, "Error of parsing");
                     state = processState.Error;
                 } finally {
-                    in.close();
+                    if (in != null) {
+                        in.close();
+                    }
                 }
             } catch (Exception e) {
                 Log.e(TAG, "Error of connection");

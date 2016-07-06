@@ -1,7 +1,5 @@
 package ru.ifmo.android_2015.citycam.model;
 
-import java.net.URL;
-
 public class WebCam {
 
     private String title;
